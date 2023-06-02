@@ -15,7 +15,7 @@ def play_game():
 
         if guess == num:
             print("Поздравляем! Вы угадали число {} за {} попыток.".format(num, attempt))
-            return
+            break
         elif guess < num:
             print("Загаданное число больше.")
         else:
