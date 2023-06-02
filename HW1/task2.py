@@ -15,13 +15,13 @@ def is_prime(number):
 
 def get_number():
     while True:
-        try:
-            number = int(input("Введите число (от 0 до 100000): "))
-            if number < 0 or number > 100000:
-                print("Пожалуйста, введите число от 0 до 100000.")
-            else:
+        number = input("Введите число (от 0 до 100000): ")
+        if number.isdigit():
+            number = int(number)
+            if 0 <= number <= 100000:
                 return number
-        except ValueError:
+
+        print("Пожалуйста, введите целое число от 0 до 100000.")
             print("Пожалуйста, введите целое число.")
 
 number = get_number()
