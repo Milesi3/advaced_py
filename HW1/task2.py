@@ -22,7 +22,7 @@ def get_number():
                 return number
 
         print("Пожалуйста, введите целое число от 0 до 100000.")
-            print("Пожалуйста, введите целое число.")
+        print("Пожалуйста, введите целое число.")
 
 number = get_number()
 if is_prime(number):
