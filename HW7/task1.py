@@ -46,10 +46,9 @@ def create_files_with_extension(extension, num_files, directory=None, min_name_l
 
 # Example usage:
 extension_counts = {
-    'txt': 10,
+    'json': 10,
     'csv': 5,
-    'jpg': 7,
-    'png': 3
+    'pickle': 7,
 }
 
 generate_files_with_extensions(extension_counts, directory='output')
