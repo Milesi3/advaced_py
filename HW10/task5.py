@@ -60,14 +60,7 @@ class Mammals(Animals):
 class AnimalFactory:
     @staticmethod
     def create_animal(animal_type, **kwargs):
-        if animal_type == "Fish":
-            return Fish(**kwargs)
-        elif animal_type == "Birds":
-            return Birds(**kwargs)
-        elif animal_type == "Mammals":
-            return Mammals(**kwargs)
-        else:
-            raise ValueError("Invalid animal type")
+        retern animal_type(**kwargs)
 
 
 fish_params = {"name": "Salmon", "tail": True, "fresh_water": True, "deep": 5}
