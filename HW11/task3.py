@@ -4,6 +4,7 @@
 # Складываем и вычитаем периметры, а не длину и ширину.
 # При вычитании не допускайте отрицательных значений.
 
+from MyBaseException import NegativeMeaning
 class Rectangle:
     """Доработанный класс прямоугольник из прошлого семинара."""
 
@@ -12,8 +13,12 @@ class Rectangle:
         if len(args) == 1:
             self.length = args[0]
             self.width = self.length
+        elif len(args) == 2:
+            self.length, self.width = args
         else:
             self.length, self.width, _ = args
+        if self.length < 0 or self.width < 0:
+            raise NegativeMeaning(self.length, self.width)
 
     def get_perimeter(self):
         return self.length * 2 + self.width * 2
@@ -52,7 +57,7 @@ class Rectangle:
 
 
 if __name__ == "__main__":
-    rec_1 = Rectangle(5)
+    rec_1 = Rectangle(-5,4)
     rec_2 = Rectangle(5)
     print(f'{rec_1.get_perimeter() = }\n{rec_2.get_perimeter() = }')
     rec_3 = rec_1 + rec_2
